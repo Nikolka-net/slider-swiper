@@ -98,3 +98,45 @@ h6 {
 	color: #fff;
 	font-size: 80px;
 }
+
+/* Пагинация */
+.image-slider .swiper-pagination {
+	bottom: 0;
+}
+/* Буллеты */
+.image-slider .swiper-pagination-bullet {
+	width: 20px;
+	height: 20px;
+	line-height: 1.4;
+	font-size: 14px;
+	background-color: #fff;
+}
+/* Фракция */
+.image-slider .swiper-pagination-fraction {
+	font-size: 20px;
+	color: #fff;
+}
+/* Прогрессбар */
+.image-slider .swiper-pagination-progressbar-fill {
+	background-color: #7a956b;
+}
+/* Скролл */
+.image-slider .swiper-scrollbar-drag {
+	cursor: pointer;
+	background-color: #7a956b;
+}
+/* Автоширина к нашим слайдам */
+.image-slider .swiper-slide {
+	width: auto;
+}
+
+/* Мультирядность */
+/* .image-slider {
+	height: 700px;
+} */
+
+/* половина высоты слайдера с учётом отступов, т.к. 2 ряда */
+/* .image-slider .swiper-slide {
+	height: calc((100% - 30px) / 2);
+	overflow: hidden;
+} */
