@@ -83,7 +83,7 @@ new Swiper('.image-slider', { // класс объекта, он будет сл
 	// Коли-во слайдов для показа
 	slidesPerView: 2, // если "auto" - автомати-е коли-во слайдов, не работ., если 2 ряда и >
 
-	// Отключение функционала слайдера
+	// Отключение функционала слайдера, выкл. его
 	// если слайдов меньше, чем нужно
 	watchOverflow: true,
 
@@ -103,9 +103,126 @@ new Swiper('.image-slider', { // класс объекта, он будет сл
 	slidesPerColumn: 1, // отключ. autoHight
 
 	// Бесконечный слайдер: должен быть 1 ряд, откл. скролл,
-	loop: true,
+	loop: false,
 
 	// Длы норм. работы loop коли-во дублирующих слайдов, если slidesPerView: 'auto' ~
-	loopedSlides: 2,
+	loopedSlides: 0,
+
+	// Свободный режим - быстрое листание как ленту
+	freeMode: true,
+
+	// Автопрокрутка
+	// autoplay: {
+	// 	// Пауза между прокруткой
+	// 	delay: 1000,
+	// 	// Закончить на последнем слайде
+	// 	stopOnLastSlide: true,
+	// 	// Отключить после ручного переключения (перетащили слайд), прокрутка не возобновится: true
+	// 	disableOnInteraction: false
+	// },
+
+	// Скорость переключения слайдов
+	speed: 800,
+
+	// Вертикальный слайдер
+	// direction: 'vertical',
+	// Горизонтальный слайдер
+	direction: 'horizontal',
+
+
+	// Эффекты переключения слайдов
+
+	// Листание
+	effect: 'slide',
+
+	// Смена прозрачности: 1 слайд меняется на другой
+	// effect: 'fade',
+	// Дополнение к fade
+	// fadeEffect: {
+	// 	// Параллельная смена прозрачности
+	// 	crossFade: true
+	// },
+
+	// Переворот
+	// effect: 'flip',
+	// Дополнение к flip
+	// flipEffect: {
+	// 	// Тень
+	// 	slideShadow: true,
+	// 	// Показ только активного слайда
+	// 	limitRotation: true
+	// },
+
+	// Куб
+	// effect: 'cube',
+	// Дополнение к cube
+	/* 	cubeEffect: {
+			// Настройка тени
+			slideShadows: true,
+			shadow: true,
+			shadowOffset: 20,
+			shadowScale: 0.94
+		}, */
+
+	// Эффект потока
+	// effect: 'coverflow',
+	// Дополнение к coverflow
+	/* 	coverflowEffect: {
+			// Угол
+			rotate: 20,
+			// Наложение
+			stretch: 50,
+			// Тень
+			slideShadows: true,
+		}, */
+
+	// Брейк понты - адаптив
+	// Ширина экрана mobile first: больше, чем указанное значение
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+		},
+		480: {
+			slidesPerView: 2,
+		},
+		992: {
+			slidesPerView: 3,
+		}
+	},
+
+	// Соотношение сторон: высота, делённая на ширину
+	// breakpoints: {
+	// 	'@0.75': {
+	// 		slidesPerView: 1,
+	// 	},
+	// 	'@1.00': {
+	// 		slidesPerView: 2,
+	// 	},
+	// 	'@1.50': {
+	// 		slidesPerView: 3,
+	// 	}
+	// },
+
+	// Отключить предзагрузку всех картинок сразу
+	preloadImages: false,
+	// Lazy Loading подгрузка картинок
+	lazy: {
+		// Картинка подгружается на старте переключения слайда
+		loadOnTransitionStart: false,
+		// Подгрузить предыдущую и следующую картинки, если true пользователь не заметит разницу
+		loadPrevNext: false,
+	},
+	// Слежка за видимыми слайдами, включать когда slidesPerView = 'auto' or > 1
+	watchSlidesProgress: true,
+	// Добавление класса видимым слайдам
+	watchSlidesVisibility: true,
+
+	// Зум картинки - увеличение
+	zoom: {
+		// Максимальное >
+		maxRatio: 5,
+		// Минимальное увеличение
+		minRatio: 1,
+	},
 
 });
