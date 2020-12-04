@@ -13,9 +13,9 @@
 	<div class="wrapper">
 		<h1 class="title">Слайдер Swiper</h1>
 
-		<!-- Слайдер -->
+		<!-- Главный слайдер -->
 		<div class="image-slider swiper-container">
-			<!-- Хеш навигация -->
+			<!-- Хеш навигация, lazy loading, zoom -->
 			<div class="image-slider__wrapper swiper-wrapper">
 				<div data-hash="slide-1" class="image-slider__slide swiper-slide">
 					<div class="image-slider__image swiper-zoom-container">
@@ -73,11 +73,129 @@
 			<!-- Добавляем пагинацию -->
 			<div class="swiper-pagination"></div>
 			<!-- Добавляем полосу прокрутки -->
-			<div class="swiper-scrollbar"></div>
+			<!-- <div class="swiper-scrollbar"></div> -->
+			<!-- Фракция -->
+			<div class="image-slider__fraction">
+				<div class="image-slider__current">1</div>
+				<div class="image-slider__sepparator"> / </div>
+				<div class="image-slider__total">1</div>
+			</div>
 		</div>
 		<!-- swiper-container -->
+
+		<!-- Миниатюры. Превью. Thumbs -->
+		<div class="image-mini-slider swiper-container">
+			<div class="image-mini-slider__wrapper swiper-wrapper">
+				<div class="image-mini-slider__slide swiper-slide">
+					<div class="image-mini-slider__image">
+						<img src="./image/01.jpg" alt="картинка">
+					</div>
+				</div>
+				<!-- end swiper-slide -->
+				<div class="image-mini-slider__slide swiper-slide">
+					<div class="image-mini-slider__image">
+						<img src="./image/02.jpg" alt="картинка">
+					</div>
+				</div>
+				<!-- end swiper-slide -->
+				<div class="image-mini-slider__slide swiper-slide">
+					<div class="image-mini-slider__image">
+						<img src="./image/03.jpg" alt="картинка">
+					</div>
+				</div>
+				<!-- end swiper-slide -->
+				<div class="image-mini-slider__slide swiper-slide">
+					<div class="image-mini-slider__image">
+						<img src="./image/04.jpg" alt="картинка">
+					</div>
+				</div>
+				<!-- end swiper-slide -->
+				<div class="image-mini-slider__slide swiper-slide">
+					<div class="image-mini-slider__image">
+						<img src="./image/05.jpg" alt="картинка">
+					</div>
+				</div>
+				<!-- end swiper-slide -->
+				<div class="image-mini-slider__slide swiper-slide">
+					<div class="image-mini-slider__image">
+						<img src="./image/09.jpg" alt="картинка">
+					</div>
+				</div>
+				<!-- end swiper-slide -->
+			</div>
+			<!-- end swiper-wrapper -->
+		</div>
+		<!-- end image-mini-slider -->
+
+		<!-- Параллакс слайдер -->
+		<h2 class="title">Параллакс слайдер</h2>
+		<div class="parallax-slider swiper-container">
+			<!-- Объект с фоновым изображение всего слайдера -->
+			<div class="parallax-slider__bg" data-swiper-parallax="-20%"></div>
+			<div class="parallax-slider__wrapper swiper-wrapper">
+				<div class="parallax-slider__slide swiper-slide">
+					<h2 class="parallax-slider__title" data-swiper-parallax-opacity="0" data-swiper-parallax-scale="0.2">Слайд № 1
+					</h2>
+					<p class="parallax-slider__text" data-swiper-parallax="-300" data-swiper-parallax-opacity="0"
+						data-swiper-parallax-duration="500">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto doloremque in sit voluptas eaque, fugit
+						voluptatibus saepe, deleniti nam omnis sapiente ab voluptatem pariatur blanditiis sequi est quod autem.
+					</p>
+					<a href="#!" class="parallax-slider__button" data-swiper-parallax-opacity="0"
+						data-swiper-parallax="-100">Кнопка</a>
+				</div>
+				<!-- end swiper-slide -->
+				<div class="parallax-slider__slide swiper-slide">
+					<h2 class="parallax-slider__title" data-swiper-parallax-opacity="0" data-swiper-parallax-scale="0.2">Слайд № 2
+					</h2>
+					<p class="parallax-slider__text" data-swiper-parallax="-300" data-swiper-parallax-opacity="0"
+						data-swiper-parallax-duration="500">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto doloremque in sit voluptas eaque, fugit
+						voluptatibus saepe, deleniti nam omnis sapiente ab voluptatem pariatur blanditiis sequi est quod autem.
+					</p>
+					<a href="#!" class="parallax-slider__button" data-swiper-parallax-opacity="0"
+						data-swiper-parallax="-100">Кнопка</a>
+				</div>
+				<!-- end swiper-slide -->
+				<div class="parallax-slider__slide swiper-slide">
+					<h2 class="parallax-slider__title" data-swiper-parallax-opacity="0" data-swiper-parallax-scale="0.2">Слайд № 3
+					</h2>
+					<p class="parallax-slider__text" data-swiper-parallax="-300" data-swiper-parallax-opacity="0"
+						data-swiper-parallax-duration="500">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iusto doloremque in sit voluptas eaque, fugit
+						voluptatibus saepe, deleniti nam omnis sapiente ab voluptatem pariatur blanditiis sequi est quod autem.
+					</p>
+					<a href="#!" class="parallax-slider__button" data-swiper-parallax-opacity="0"
+						data-swiper-parallax="-100">Кнопка</a>
+				</div>
+				<!-- end swiper-slide -->
+			</div>
+			<!-- end parallax-slider__wrapper -->
+
+			<!-- Добавляем стрелки управления -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
+		<!-- end parallax-slider swiper-container -->
+
+		<!-- Динамический вывод слайдов -->
+		<h2 class="title">Динамический слайдер</h2>
+		<div class="dinam-slider swiper-container">
+			<div class="dinam-slider__wrapper swiper-wrapper">
+				<div class="dinam-slider__slide swiper-slide">
+				</div>
+				<!-- end swiper-slide -->
+			</div>
+			<!-- end parallax-slider__wrapper -->
+
+			<!-- Добавляем стрелки управления -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
+		<!-- dinam-slider swiper-container -->
 	</div>
 	<!-- end wrapper -->
+
 	<script src="./js/swiper-bundle.js"></script>
 	<script src="./js/script.js"></script>
 </body>

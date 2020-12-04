@@ -1,7 +1,7 @@
 'use strict';
 
 // Инициализация слайдера
-new Swiper('.image-slider', { // класс объекта, он будет слайдером
+let myImageSlider = new Swiper('.image-slider', { // класс объекта, он будет слайдером
 	// Стрелки
 	navigation: {
 		nextEl: '.swiper-button-next',
@@ -21,20 +21,20 @@ new Swiper('.image-slider', { // класс объекта, он будет сл
 		}, */
 		/* Другие варинаты навигации */
 		// Фракция - текущая стр. слайдера из общего числа
-		type: 'fraction',
+		// type: 'fraction',
 		// Кастомный вывод фракции - свой стиль написания
 		renderFraction: function (currentClass, totalClass) {
 			return 'Фото <span class="' + currentClass + '"></span>' + ' из ' +
 				'<span class="' + totalClass + '"></span>';
 		},
-		// type: 'progressbar'
+		type: 'progressbar'
 
 	},
-	scrollbar: {
-		el: '.swiper-scrollbar',
-		// Возможность перетаскивать скролл
-		draggable: true
-	},
+	// scrollbar: {
+	// 	el: '.swiper-scrollbar',
+	// 	// Возможность перетаскивать скролл
+	// 	draggable: true
+	// },
 	// Включение/отключение
 	// перетаскивания слайдов на пк
 	simulateTouch: true,
@@ -81,7 +81,7 @@ new Swiper('.image-slider', { // класс объекта, он будет сл
 	autoHeight: false,
 
 	// Коли-во слайдов для показа
-	slidesPerView: 2, // если "auto" - автомати-е коли-во слайдов, не работ., если 2 ряда и >
+	slidesPerView: 1, // если "auto" - автомати-е коли-во слайдов, не работ., если 2 ряда и >
 
 	// Отключение функционала слайдера, выкл. его
 	// если слайдов меньше, чем нужно
@@ -186,7 +186,7 @@ new Swiper('.image-slider', { // класс объекта, он будет сл
 			slidesPerView: 2,
 		},
 		992: {
-			slidesPerView: 3,
+			slidesPerView: 1,
 		}
 	},
 
@@ -210,7 +210,7 @@ new Swiper('.image-slider', { // класс объекта, он будет сл
 		// Картинка подгружается на старте переключения слайда
 		loadOnTransitionStart: false,
 		// Подгрузить предыдущую и следующую картинки, если true пользователь не заметит разницу
-		loadPrevNext: false,
+		loadPrevNext: true,
 	},
 	// Слежка за видимыми слайдами, включать когда slidesPerView = 'auto' or > 1
 	watchSlidesProgress: true,
@@ -223,6 +223,151 @@ new Swiper('.image-slider', { // класс объекта, он будет сл
 		maxRatio: 5,
 		// Минимальное увеличение
 		minRatio: 1,
+	},
+
+	// Миниатюры (превью)
+	thumbs: {
+		// Свайпер с миниатюрами, его настройки
+		swiper: {
+			el: '.image-mini-slider',
+			slidesPerView: 5,
+		}
+	},
+
+	// Если изначально слайдер скрыт и вызывается нажатием на вкладку, табом:
+	// Обновить swiper при изменении
+	// элементов слайдера
+	observer: true,
+
+	// Обновить swiper при изменении
+	// родительских элементов слайдера
+	observerParents: true,
+
+	// Обновить swiper при изменении
+	// дочерних элементов слайда
+	observerSlideChildren: true,
+
+	// Доступность для людей с огранич. возможностями
+	ally: {
+		// Включить/выключить
+		enabled: true,
+		// Сообщения
+		prevSlideMessage: 'Previous slide',
+		nextSlideMessage: 'Next slide',
+		firstSlideMessage: 'This is the first slide',
+		lastSlideMessage: 'This is the last slide',
+		paginationBulletMessage: 'Go to slide {{index}}',
+		notificationClass: 'swiper-notification',
+		containerMessage: '',
+		containerRoleDescriptionMessage: '',
+		itemRoleDescriptionMessage: '',
+		// и т.д.
+	},
+
+	// События
+	on: {
+		// Событие инициализации
+		init: function () {
+			console.log('Слайдер запущен');
+		},
+		// Событие смены слайда
+		slideChange: function () {
+			console.log('Слайд переключен');
+		}
+	},
+
+});
+
+// Можно работать с параметрами слайдера за его пределами
+
+// Параметры: примеры
+
+// Получение: коли-во слайдов
+let qSlides = myImageSlider.slides.length;
+
+// Изменение параметров
+myImageSlider.params.speed = 1000;
+
+// Методы, позволяют удалённо управл. слайдером
+// Обновить слайдер
+myImageSlider.update();
+
+// Переключиться на слайд 2, скорость 800. Какой слайд будет первым показываться
+myImageSlider.slideTo(0, 800);
+
+// События
+// Событие смены слайда, пишется внутри или снаружи слайдера
+// myImageSlider.on('slideChange', function () {
+// 	console.log('Слайд переключен');
+// });
+
+// Запуск автопрокрутки при наведении
+let sliderBlock = document.querySelector('.image-slider');
+
+// myImageSlider - это переменная, кото-й присвоен слайдер
+
+// sliderBlock.addEventListener('mouseenter', function (e) {
+// 	myImageSlider.params.autoplay.disableOnInteraction = false;
+// 	myImageSlider.params.autoplay.delay = 500;
+// 	myImageSlider.autoplay.start(); // вкл. автопрокрутку при наведении
+// });
+
+// sliderBlock.addEventListener('mouseleave', function (e) {
+// 	myImageSlider.autoplay.stop(); // отключ. автопрокрутку
+// });
+
+// end запуск автопрокрутки при наведении
+
+// Запуск фракции
+
+let mySliderAllSlides = document.querySelector('.image-slider__total'); // общее ко-во стр.
+let mySliderCurrentSlide = document.querySelector('.image-slider__current'); // текущ. ко-во стр.
+
+mySliderAllSlides.innerHTML = myImageSlider.slides.length; // записыв. коли-во слайдов
+
+myImageSlider.on('slideChange', function() {
+	let currentSlide = ++myImageSlider.realIndex; // получ. индех слайдера и > на 1(index начин. с 0)
+	mySliderCurrentSlide.innerHTML = currentSlide; // выводим это значение внутрь объекта с тек. стр.
+});
+
+// end запуск фракции
+
+
+
+// Инициализация параллакс слайдера
+
+new Swiper('.parallax-slider', {
+	// Включаем параллакс
+	parallax: true,
+	// Скорость переключения
+	speed: 2000,
+	// Стрелки
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev'
+	},
+
+});
+
+// Инициализация динамического слайдера
+
+new Swiper('.dinam-slider', {
+	// Стрелки
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev'
+	},
+
+	// Виртуальные слайды
+	// формирование слайдера
+	virtual: {
+		slides: (function () {
+			let slide = [];
+			for (let i = 0; i < 500; i++) {
+				slide.push(`<div class="image-slider__text">Слайд №${i}</div>`);
+			}
+			return slide;
+		}()),
 	},
 
 });

@@ -100,6 +100,7 @@ h6 {
 .image-slider .swiper-pagination {
 	bottom: 0;
 }
+
 /* Буллеты */
 .image-slider .swiper-pagination-bullet {
 	width: 20px;
@@ -108,20 +109,24 @@ h6 {
 	font-size: 14px;
 	background-color: #fff;
 }
+
 /* Фракция */
 .image-slider .swiper-pagination-fraction {
 	font-size: 20px;
 	color: #fff;
 }
+
 /* Прогрессбар */
 .image-slider .swiper-pagination-progressbar-fill {
 	background-color: #7a956b;
 }
+
 /* Скролл */
 .image-slider .swiper-scrollbar-drag {
 	cursor: pointer;
 	background-color: #7a956b;
 }
+
 /* Автоширина к нашим слайдам */
 .image-slider .swiper-slide {
 	width: auto;
@@ -139,12 +144,52 @@ h6 {
 } */
 
 /* Вертикальный слайдер */
-.image-slider {
-	/* padding: 0px 0 0px 0;
-	height: 700px; */
-}
+/* .image-slider {
+	padding: 0px 0 0px 0;
+	height: 700px;
+} */
 
 /* Эффект куб */
-.image-slider {
-	/* width: 500px; */
+/* .image-slider {
+	width: 500px;
+} */
+
+/* Минитатюры (превью) */
+
+.image-mini-slider__slide {
+	opacity: 0.2;
+	transition: opacity 0.3s ease 0s;
 }
+
+.image-mini-slider__slide.swiper-slide-thumb-active {
+	opacity: 1;
+}
+
+.image-mini-slider__image {
+	position: relative;
+	padding: 0 0 30% 0;
+	cursor: pointer;
+}
+
+.image-mini-slider__image img {
+	object-fit: cover;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+/* Фракция */
+.image-slider__fraction {
+	padding: 10px 0 0 0;
+	display: flex;
+	justify-content: center;
+	font-size: 25px;
+	color: #fff;
+}
+
+.image-slider__sepparator {
+	margin: 0 15px;
+}
+
