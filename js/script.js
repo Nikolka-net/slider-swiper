@@ -103,7 +103,7 @@ let myImageSlider = new Swiper('.image-slider', { // класс объекта, 
 	slidesPerColumn: 1, // отключ. autoHight
 
 	// Бесконечный слайдер: должен быть 1 ряд, откл. скролл,
-	loop: false,
+	loop: true,
 
 	// Длы норм. работы loop коли-во дублирующих слайдов, если slidesPerView: 'auto' ~
 	loopedSlides: 0,
